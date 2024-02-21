@@ -1,0 +1,374 @@
+@font-face {
+    font-family: 'gothic-main';
+    src: url("fonts/Engravers' Gothic Regular.otf");
+}
+
+@font-face {
+    font-family: 'rf-regular';
+    src: url("fonts/RF Tone Regular.otf");
+}
+@font-face {
+    font-family: 'rf-bold';
+    src: url("fonts/RF Tone Bold.otf");
+}
+
+html body {
+    margin: 0;
+    padding: 0;
+}
+
+.site-base-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.container-1-of-3 {
+    display: flex;
+    width: 32%;
+}
+
+.container-1-of-3__logo {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container-1-of-3__logo_img {
+    width: 10%;
+}
+
+.header-buttons-centered {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.header-buttons-centered__button {
+    display: flex;
+    border: 0;
+    align-items: center;
+    background-color: rgba(0,0,0,0)
+}
+
+.header-buttons-centered__a {
+    text-decoration: none;
+    color: black;
+    font-size: 1vw;
+}
+
+.currency-picker-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.top-presentation-banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #121212;
+}
+
+
+.middle-centered-text-container {
+    display: flex;
+    width: 95%;
+    max-height: 1%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.middle-centered-text-container__span {
+    text-align: center;
+    font-family: 'gothic-main';
+    font-size: 5.5vw;
+    color: white;
+}
+
+.image-buttons-slider-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+    width: 95%;
+}
+
+.image-buttons-slider-container__img {
+    display: flex;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.previous-photo-button-left {
+    position: absolute;
+    left: 5%;
+    background-color: rgba(0,0,0,0);
+    border: 3px solid white;
+    color: white;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2vw;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.previous-photo-button-left__span {
+    display: flex;
+}
+
+.next-photo-button-right {
+    position: absolute;
+    left: 91.5%;
+    background-color: rgba(0,0,0,0);
+    border: 3px solid white;
+    color: white;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2vw;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.next-photo-button-right__span {
+    display: flex;
+}
+
+.top-presentation-banner-container__hr {
+    border: 1px solid #353535;
+    width: 95%;
+}
+
+.actual-text-max-width-container {
+    display: flex;
+    width: 100%;
+}
+
+.actual-text-max-width-container__span {
+    font-family: 'gothic-main';
+    font-size: 3.6vw;
+    color: white;
+}
+
+.actual-lots-grid-container-4pcs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+.single-product-collected-container {
+    display: flex;
+    width: 24%;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #353535;
+}
+
+.lot-photo-holder-container {
+    width: 60%;
+}
+
+.lot-photo-holder-container__img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.double-container-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 15%;
+}
+
+.text-name-holder-container {
+    display: flex;
+    width: 55%;
+    justify-content: center;
+}
+
+.text-name-holder-container__span {
+    font-family: rf-regular;
+    font-size: 1.5vw;
+}
+
+.text-price-holder-container {
+    display: flex;
+    width: 38%;
+    justify-content: flex-end;
+}
+
+.text-price-holder-container__span {
+    font-family: rf-regular;
+    font-size: 1.5vw;
+}
+
+.percent95-marker-holder-container:first-child {
+    margin-top: 1.2%;
+}
+
+.percent95-marker-holder-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    background-color: white;
+    margin-bottom: 1.2%;
+}
+
+.see-all-dark-rectangle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 49.5%;
+    background-color: #121212;
+}
+
+.see-all-dark-rectangle-container__button {
+    display: flex;
+    border: 0;
+    align-items: center;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+}
+
+.see-all-dark-rectangle-container__a {
+    text-decoration: none;
+    color: white;
+    font-size: 2vw;
+    font-family: "gothic-main";
+}
+
+.categories-photo-picker-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: white;
+}
+
+.categories-column-holder-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.category-row-item-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1%;
+    cursor: pointer;
+}
+
+.square-brackets-container {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+}
+
+.category-name-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 40%;
+    margin-top: 0.3%;
+}
+
+.category-items-count-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+    margin-top: 0.3%;
+}
+
+.link-arrow-container {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+}
+
+
+.square-brackets-container__span {
+    font-size: 2vw;
+    font-family: rf-regular;
+    color: #cfcfcf;
+}
+
+.category-name-container__span {
+    font-size: 2vw;
+    font-family: rf-regular;
+}
+
+.category-items-count-container__span {
+    font-size: 2vw;
+    font-family: rf-regular;
+}
+
+.link-arrow-container__span {
+    font-size: 2vw;
+    font-family: rf-regular;
+}
+
+.bottom-footer-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+}
+
+.logo-picture-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 95%;
+}
+
+.logo-picture-container__img {
+    display: flex;
+    width: 35%;
+    height: auto;
+}
+
+.duplicated-separated-sections-contact-container {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    justify-content: space-between;
+}
+
+.section-sector-container {
+    display: flex;
+    width: 49%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section-span-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.section-span-holder__span {
+    font-family: 'gothic-main';
+    color: white;
+    font-size: 3vw;
+}
+
+.section-sector-container__hr {
+    border: 1px solid #353535;
+    width: 100%;
+}
