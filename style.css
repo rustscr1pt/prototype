@@ -26,8 +26,8 @@ html body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
 }
 
 .container-1-of-3 {
@@ -84,6 +84,10 @@ html body {
     max-height: 1%;
     justify-content: center;
     align-items: flex-end;
+}
+
+#carouselExample {
+    width: 100%;
 }
 
 .middle-centered-text-container__span {
@@ -177,6 +181,11 @@ html body {
 
 .lot-photo-holder-container {
     width: 60%;
+    filter: blur(5px) brightness(1);
+}
+
+.lot-photo-holder-container-unblured {
+    width: 60%;
 }
 
 .lot-photo-holder-container__img {
@@ -184,6 +193,15 @@ html body {
     max-height: 100%;
 }
 .double-container-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 15%;
+    filter: blur(5px) brightness(0.5);
+}
+
+.double-container-holder-unblured {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -272,6 +290,7 @@ html body {
     justify-content: space-between;
     margin-bottom: 1%;
     cursor: pointer;
+    border-bottom: solid #353535;
 }
 
 .square-brackets-container {
