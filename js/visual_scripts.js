@@ -34,8 +34,8 @@ $(function() {
                 </div>`
 
 
-            $(this).animate({'opacity': 0}, 400, function(){
-                $(this).html(cleared).animate({'opacity': 1}, 400);
+            $(this).animate({'opacity': 0}, 500, function(){
+                $(this).html(cleared).animate({'opacity': 1}, 500);
             });
         },
         mouseleave: function() {
