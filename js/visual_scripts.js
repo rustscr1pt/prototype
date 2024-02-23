@@ -1,5 +1,5 @@
 $(function() {
-    $('.header-buttons-centered__a').on({
+    $('.header-buttons-centered__a, .mobile-menu-section-container__button').on({
         mouseenter: function() {
             $(this).css("text-decoration", "underline")
         },
@@ -13,8 +13,6 @@ $(function() {
             const image_source = $(this).find(".lot-photo-holder-container__img").attr("src");
             const product_name = $(this).find(".text-name-holder-container__span").text();
             const price = $(this).find(".text-price-holder-container__span").text();
-
-            console.log(image_source, product_name, price);
 
             const cleared = `
                     <div class="lot-photo-holder-container-unblured">
@@ -68,17 +66,17 @@ $(function() {
         }
     });
 
-    $('.unwrap-the-menu-container__button .unwrap-the-menu-container__span').on('click', function() {
-        const menu_vector = ["CATALOG", "ABOUT", "NEWS", "HELP"];
-        console.log($(".max-width-mobile-menu-container"));
-        if ($(this).parents(".mobile-header").find(".max-width-mobile-menu-container").length === 1) {
-            menu_vector.forEach(function(value) {
-                const slice = `<div class="mobile-menu-section-container"><button class="mobile-menu-section-container__button">${value}<a class="mobile-menu-section-container__a" href="#"></a></button></div>`;
-                $(".max-width-mobile-menu-container").append(slice);
-            })
+    $(".unwrap-the-menu-container__button, .unwrap-the-menu-container__span").on('click', function() {
+        const selector = $(".max-width-mobile-menu-container").css("display");
+        if (selector === "flex") {
+            $(".max-width-mobile-menu-container").fadeOut("fast", function() {
+                $(this).css("display", "none");
+            });
         }
         else {
-            $(this).parents(".mobile-header").find(".max-width-mobile-menu-container").empty();
+            $(".max-width-mobile-menu-container").fadeIn("slow", function() {
+                $(this).css("display", "flex");
+            });
         }
     })
 })
