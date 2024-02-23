@@ -19,7 +19,7 @@ html body
   flex-direction: column
 
 .mobile-header
-  display: none // Flex
+  display: flex
   flex-direction: column
   align-items: center
 
@@ -40,6 +40,7 @@ html body
     display: flex
     width: 30%
     border: 0
+    border-radius: 10px
     justify-content: center
   &__span
     display: flex
@@ -47,6 +48,32 @@ html body
     text-decoration: underline
     font-size: 2vw
     align-self: center
+
+.max-width-mobile-menu-container
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  background-color: rgb(255, 255, 255)
+
+.mobile-menu-section-container
+  display: flex
+  flex-direction: row
+  justify-content: center
+  width: 95%
+  background-color: rgb(255, 255, 255)
+  margin-bottom: 1.2%
+  &__button
+    justify-content: center
+    border-radius: 10px
+    width: 100%
+    display: flex
+    border: 0
+  &__a
+    text-decoration: none
+    font-size: 3vw
+    color: black
+    text-align: center
 
 .header-main
   display: flex
@@ -355,4 +382,14 @@ html body
   width: 100%
 
 @media (max-width: 750px)
+  .header-main
+    display: none
+  .mobile-header
+    display: flex
+
+@media (min-width: 750px)
+  .header-main
+    display: flex
+  .mobile-header
+    display: none
 

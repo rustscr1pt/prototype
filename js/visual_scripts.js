@@ -7,6 +7,7 @@ $(function() {
             $(this).css("text-decoration", "none")
         }
     });
+
     $('.single-product-collected-container').on({
         mouseenter: function() {
             const image_source = $(this).find(".lot-photo-holder-container__img").attr("src");
@@ -66,4 +67,18 @@ $(function() {
             });
         }
     });
+
+    $('.unwrap-the-menu-container__button .unwrap-the-menu-container__span').on('click', function() {
+        const menu_vector = ["CATALOG", "ABOUT", "NEWS", "HELP"];
+        console.log($(".max-width-mobile-menu-container"));
+        if ($(this).parents(".mobile-header").find(".max-width-mobile-menu-container").length === 1) {
+            menu_vector.forEach(function(value) {
+                const slice = `<div class="mobile-menu-section-container"><button class="mobile-menu-section-container__button">${value}<a class="mobile-menu-section-container__a" href="#"></a></button></div>`;
+                $(".max-width-mobile-menu-container").append(slice);
+            })
+        }
+        else {
+            $(this).parents(".mobile-header").find(".max-width-mobile-menu-container").empty();
+        }
+    })
 })
