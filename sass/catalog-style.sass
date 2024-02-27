@@ -1,5 +1,12 @@
 @import style
 
+@mixin grid-item-flex-base
+  display: flex
+  width: 33%
+  flex-direction: column
+  align-items: center
+
+
 .top-presentation-banner-container__white
   display: flex
   flex-direction: column
@@ -21,3 +28,70 @@
   font-family: 'gothic-main'
   font-size: 8vw
   color: $background_black
+
+.catalog-desktop-lots-grid-container-3pcs-horizontal
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  background-color: $crystal_white
+
+.percent95-width-catalog-container
+  display: flex
+  flex-direction: row
+  justify-content: center
+  width: 95%
+  background-color: $crystal_white
+
+
+.single-product-collected-33-container-top-left
+  @include grid-item-flex-base
+  border-left: 2px solid $border_color
+  border-top: 2px solid $border_color
+  border-bottom: 2px solid $border_color
+
+.single-product-collected-33-container-top-middle
+  @include grid-item-flex-base
+  border: 2px solid $border_color
+
+.single-product-collected-33-container-top-right
+  @include grid-item-flex-base
+  border-top: 2px solid $border_color
+  border-bottom: 2px solid $border_color
+  border-right: 2px solid $border_color
+
+.single-product-collected-33-container-borderless
+  @include grid-item-flex-base
+  border-top: 2px solid $border_color
+  border-bottom: 2px solid $border_color
+
+.single-product-collected-33-container-second-lane-left
+  @include grid-item-flex-base
+  border-left: 2px solid $border_color
+  border-bottom: 2px solid $border_color
+
+.single-product-collected-33-container-second-lane-middle
+  @include grid-item-flex-base
+  border-left: 2px solid $border_color
+  border-right: 2px solid $border_color
+  border-bottom: 2px solid $border_color
+
+.single-product-collected-33-container-second-lane-right
+  @include grid-item-flex-base
+  border-right: 2px solid $border_color
+  border-bottom: 2px solid $border_color
+
+.bottom-margin-divider
+  width: 100%
+  margin-top: 3%
+
+.next-prev-buttons-holder-container
+  display: flex
+  width: 100%
+  flex-direction: row
+  justify-content: center
+  &-width-30
+    display: flex
+    width: 30%
+    justify-content: space-between
+    flex-direction: row
