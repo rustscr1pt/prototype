@@ -1,19 +1,4 @@
-$border_color : #353535
-$background_black : #121212
-$crystal_white : white
-$brackets_grey : #cfcfcf
-
-@font-face
-  font-family: 'gothic-main'
-  src: url("../fonts/Engravers' Gothic Regular.otf")
-
-@font-face
-  font-family: 'rf-regular'
-  src: url("../fonts/RF Tone Regular.otf")
-
-@font-face
-  font-family: 'rf-bold'
-  src: url("../fonts/RF Tone Bold.otf")
+@import fonts&colors, media_dimensions
 
 html body
   margin: 0
@@ -397,30 +382,3 @@ html
 .section-sector-container__hr
   border: 1px solid $border_color
   width: 100%
-
-@media (max-width: 750px)
-  .header-main
-    display: none
-  .mobile-header
-    display: flex
-  .single-product-collected-container
-    border: 1px solid $border_color
-    width: 49%
-  .actual-lots-grid-container-4pcs
-    display: none
-  .actual-mobile-grid-container-2pcs
-    display: flex
-  .text-name-holder-container
-    justify-content: flex-start
-  .category-row-item-container
-    border-bottom: 1px solid $border_color
-
-@media (min-width: 750px)
-  .header-main
-    display: flex
-  .mobile-header
-    display: none
-  .actual-mobile-grid-container-2pcs
-    display: none
-  .actual-lots-grid-container-4pcs
-    display: flex

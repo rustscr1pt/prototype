@@ -1,0 +1,28 @@
+@import fonts&colors
+
+@media (max-width: 750px)
+  .header-main
+    display: none
+  .mobile-header
+    display: flex
+  .single-product-collected-container
+    border: 1px solid $border_color
+    width: 49%
+  .actual-lots-grid-container-4pcs
+    display: none
+  .actual-mobile-grid-container-2pcs
+    display: flex
+  .text-name-holder-container
+    justify-content: flex-start
+  .category-row-item-container
+    border-bottom: 1px solid $border_color
+
+@media (min-width: 750px)
+  .header-main
+    display: flex
+  .mobile-header
+    display: none
+  .actual-mobile-grid-container-2pcs
+    display: none
+  .actual-lots-grid-container-4pcs
+    display: flex
