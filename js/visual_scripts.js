@@ -8,7 +8,7 @@ $(function() {
         }
     });
 
-    $('.single-product-collected-container').on({
+    $('.single-product-collected-container, .single-product-collected-33-container-top-left, .single-product-collected-33-container-top-middle, .single-product-collected-33-container-top-right, .single-product-collected-33-container-second-lane-left, .single-product-collected-33-container-second-lane-middle, .single-product-collected-33-container-second-lane-right' ).on({
         mouseenter: function() {
             const image_source = $(this).find(".lot-photo-holder-container__img").attr("src");
             const product_name = $(this).find(".text-name-holder-container__span").text();
