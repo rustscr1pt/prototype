@@ -20,5 +20,5 @@ $(function() {
                 $(this).css("display", "flex");
             });
         }
-    })
+    });
 })
