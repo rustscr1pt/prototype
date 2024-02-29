@@ -43,6 +43,14 @@
   width: 95%
   background-color: $crystal_white
 
+.percent95-left-justified-container
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  width: 95%
+  background-color: $crystal_white
+  margin-bottom: 4%
+
 
 .single-product-collected-33-container-top-left
   @include grid-item-flex-base
@@ -95,3 +103,36 @@
     width: 30%
     justify-content: space-between
     flex-direction: row
+
+.percent60-categories-holder-container
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  width: 60%
+
+.percent15-single-category-holder-container
+  display: flex
+  justify-content: center
+  width: 15%
+  &__margined-left
+    margin-left: 1.5%
+
+.change-items-filter-trigger-button__activated
+  width: 100%
+  display: flex
+  justify-content: center
+  background-color: black
+  border: 0
+  color: white
+  font-size: 2vw
+  border-radius: 10px
+
+.change-items-filter-trigger-button__deactivated
+  width: 100%
+  display: flex
+  justify-content: center
+  background-color: $crystal_white
+  border: 0
+  color: black
+  font-size: 2vw
+  border-radius: 10px
