@@ -10,7 +10,7 @@ gulp.task('serve', function() {
 
 gulp.task('styles', function() {
     return gulp
-        .src('sas/*.sass')
+        .src('sass/*.sass')
         .pipe(sass({outputStyle : 'compressed'}))
         .pipe(gulp.dest('css'))
         .pipe(browserSync.stream());
