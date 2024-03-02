@@ -7,10 +7,10 @@ const imagemin = require('gulp-imagemin'); // import photo minifier STRICTLY USE
 
 gulp.task('serve', function() {
     browserSync.init({
-        server: {baseDir: 'src'}
+        server: {baseDir: 'dist'}
     });
 
-    // gulp.watch("src/*.html").on('change', browserSync.reload()); // Track changes in src html files, if changed - reload the browser.
+    gulp.watch("src/*.html").on('change', browserSync.reload); // Track changes in src html files, if changed - reload the browser.
 });
 
 gulp.task('styles', function() {
@@ -28,10 +28,14 @@ gulp.task('checker', function() {
 });
 
 gulp.task('html-minimizer', function() { // minimize the html files
-    return gulp.src('src/**/*.html') // get any html file from the src directory
+    return gulp.src('src/*.html') // get any html file from the src directory
         .pipe(htmlmin({collapseWhitespace : true}))
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest('dist'))
 });
+
+gulp.task('animation-plugin-mover', function() { // move the animate.css library inside the dist.
+    return gulp.src("src/css/animate.css").pipe(gulp.dest('dist/css'))
+})
 
 gulp.task('scripts-mover', function() { // move js files.
     return gulp.src('src/js/*.js') // get the js files from src
@@ -61,5 +65,5 @@ gulp.task('images-mover', function() { // move images
 
 
 
-gulp.task('default', gulp.parallel('serve', 'styles', 'checker', 'scripts-mover', 'js-library-mover', 'fonts-mover', 'icons-mover', 'images-mover'));
+gulp.task('default', gulp.parallel('serve', 'styles', 'checker', 'html-minimizer', 'animation-plugin-mover', 'scripts-mover', 'js-library-mover', 'fonts-mover', 'icons-mover', 'images-mover'));
 
