@@ -59,5 +59,7 @@ $(function() {
                 $(this).css("display", "flex");
             });
         }
-    })
+    });
+
+    new WOW().init();
 })

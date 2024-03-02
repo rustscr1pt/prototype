@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "8BAEI,MAAM,CAAE,uBAA0B,KAElC,MAAM,CAAE,4BAA+B,KAEvC,MAAM,CAAE,8BAAiC,KAEzC,MAAM,CAAE,4BAA+B,KAEvC,MAAM,CAAE,uBAA0B,KAElC,MAAM,CAAE,6BAAgC,KAExC,MAAM,CAAE,+BAAkC,KAE1C,MAAM,CAAE,6BAAgC,IAExC,MAAM,CAAE,uBAA0B",
-"sources": ["../sass/animation.sass"],
-"names": [],
-"file": "animation.css"
-}
