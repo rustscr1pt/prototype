@@ -1,0 +1,1 @@
+@keyframes animated_logo{from{filter:drop-shadow(0 0 0 #000)}14%{filter:drop-shadow(10px 0 1px #000)}28%{filter:drop-shadow(20px 0 2px #000)}42%{filter:drop-shadow(10px 0 1px #000)}56%{filter:drop-shadow(0 0 0 #000)}70%{filter:drop-shadow(-10px 0 1px #000)}84%{filter:drop-shadow(-20px 0 2px #000)}98%{filter:drop-shadow(-10px 0 1px #000)}to{filter:drop-shadow(0 0 0 #000)}}
