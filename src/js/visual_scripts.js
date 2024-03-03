@@ -16,7 +16,7 @@ $(function() {
                 $(this).parent().parent().parent().find('.lot-photo-holder-container__img').attr('src', doubled[index].image_path);
             });
             response.available_categories.forEach(function(object, index) {
-                const to_add = `<div class="category-row-item-container">
+                const to_add = `<div class="category-row-item-container wow animate__animated animate__bounceInDown">
                          <div class="square-brackets-container">
                              <span class="square-brackets-container__span">[0${index + 1}]</span>
                          </div>

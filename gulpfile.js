@@ -7,7 +7,7 @@ const imagemin = require('gulp-imagemin'); // import photo minifier STRICTLY USE
 
 gulp.task('serve', function() {
     browserSync.init({
-        server: {baseDir: 'dist'}
+        server: {baseDir: 'dist'} // set the base directory at dist dir
     });
 
     gulp.watch("src/*.html").on('change', browserSync.reload); // Track changes in src html files, if changed - reload the browser.
@@ -64,6 +64,6 @@ gulp.task('images-mover', function() { // move images
 });
 
 
-
-gulp.task('default', gulp.parallel('serve', 'styles', 'checker', 'html-minimizer', 'animation-plugin-mover', 'scripts-mover', 'js-library-mover', 'fonts-mover', 'icons-mover', 'images-mover'));
-
+gulp.task('default', gulp.parallel('serve', 'styles', 'checker',
+    'html-minimizer', 'animation-plugin-mover', 'scripts-mover', 'js-library-mover',
+    'fonts-mover', 'icons-mover', 'images-mover')); // MAIN LAUNCHER OF TASKS.
