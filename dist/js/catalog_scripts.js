@@ -14,7 +14,7 @@ $(function() {
             'Content-Type' : 'application/json'
         },
         success: function(reply) {
-            $('#items-counter').find('.big-catalog__span').text(`[${reply.total_items}]`);
+            $('#items-counter').find('.big-catalog__span').text(`${reply.total_items}`);
 
             $('.text-name-holder-container__span').each(function(index) {
                 console.log(reply.all_items[index].name);
@@ -57,7 +57,7 @@ $(function() {
                 'Content-Type' : 'application/json'
             },
             success: function(object) {
-                $('#items-counter').find('.big-catalog__span').text(`[${object.length}]`);
+                $('#items-counter').find('.big-catalog__span').text(`${object.length}`);
                 $('.text-name-holder-container__span').each(function(index) {
                     console.log(object[index].name);
                     $(this).text(object[index].name);
