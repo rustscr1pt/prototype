@@ -7,7 +7,7 @@ $(function() {
     }
 
     $.ajax({
-        url : 'http://localhost:8000/catalog/all',
+        url : 'http://localhost:8000/catalog/main_landing',
         method : 'GET',
         dataType : 'json',
         headers : {
@@ -59,6 +59,7 @@ $(function() {
             success: function(object) {
                 $('#items-counter').find('.big-catalog__span').text(`${object.length}`);
                 $('.text-name-holder-container__span').each(function(index) {
+                    console.log(object);
                     console.log(object[index].name);
                     $(this).text(object[index].name);
                     $(this).parent().parent().find('.text-price-holder-container__span').text(object[index].price);
