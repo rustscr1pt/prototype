@@ -1,4 +1,4 @@
-@import style, fonts&colors, pageup
+@import style, fonts&colors, pageup, grid
 
 @mixin grid-item-flex-base
   display: flex
@@ -142,37 +142,6 @@
   color: black
   font-size: 2vw
   border-radius: 10px
-
-.full-cover-container
-  display: flex
-  width: 100%
-  justify-content: center
-
-.grid-95-centered-holder-container
-  display: flex
-  width: 95%
-  justify-content: center
-  &__left
-    width: 95%
-    display: flex
-    align-items: flex-start
-
-.grid-holder-container
-  display: grid
-  grid-template-columns: repeat(3, 1fr)
-  grid-template-rows: repeat(auto-fill, 1fr)
-  gap: 1em
-
-.single-product-collected-container-max-width
-  display: flex
-  flex-direction: column
-  align-items: center
-  border: 2px solid $border_color
-
-.grid-name-title__span
-  font-family: rf-bold
-  font-size: 2vw
-
 
 /* CSS */
 .button-57
