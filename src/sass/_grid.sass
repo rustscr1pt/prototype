@@ -1,7 +1,11 @@
+@import fonts&colors
+
 .full-cover-container
   display: flex
   width: 100%
   justify-content: center
+  background-color: $crystal_white
+  padding: 2.5% 0
 
 .grid-95-centered-holder-container
   display: flex
@@ -18,7 +22,7 @@
   grid-template-rows: repeat(auto-fill, 1fr)
   gap: 1em
 
-.main-grid-holder-container
+.stock-grid-holder-container
   display: grid
   grid-template-columns: repeat(4, 1fr)
   grid-template-rows: repeat(2, 1fr)
@@ -33,3 +37,27 @@
 .grid-name-title__span
   font-family: rf-bold
   font-size: 2vw
+
+.see-all-dark-rectangle-container-full
+  grid-column: 3 / 5
+  grid-row: 2 / 3
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $background_black
+
+.green-buy-button-container
+  position: absolute
+  top: 88.4%
+  display: flex
+  width: 100%
+  background-color: $buy-green
+  align-items: center
+  justify-content: center
+
+.buy-button-item
+  background-color: rgba(0, 0, 0, 0)
+  border: 0
+  font-size: 2vw
+  font-family: rf-regular
+  color: $background_black
