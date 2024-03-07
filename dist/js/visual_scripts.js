@@ -11,7 +11,7 @@ $(function() {
             console.log(doubled);
             doubled.forEach(function(item, index) {
                 if (index < 6) {
-                    const square_element = `<div class="single-product-collected-container-max-width wow animate__animated animate__bounceInDown">
+                    const square_element = `<div class="single-product-collected-container-max-width wow animate__animated animate__zoomInUp">
                     <div class="grid-95-centered-holder-container__left">
                         <span class="grid-name-title__span">${item.brand}</span>
                     </div>
@@ -45,6 +45,10 @@ $(function() {
                 else {
                     return 0
                 }
+            });
+            response.available_categories.forEach(function(item, index) {
+                const to_add = `<div class="category-row-item-container wow animate__animated animate__bounceInDown"><div class="square-brackets-container"><span class="square-brackets-container__span">[0${index + 1}]</span></div><div class="category-name-container"><span class="category-name-container__span">${item.category.toUpperCase()}</span></div><div class="category-items-count-container"><span class="category-items-count-container__span">${item.amount}</span></div><div class="link-arrow-container"><span class="link-arrow-container__span">↗</span></div></div>`;
+                $('.categories-column-holder-container').append(to_add);
             })
         },
         error: function(_, status, err) {

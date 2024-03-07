@@ -395,6 +395,11 @@ html
     border-bottom: 1px solid $border_color
   .grid-holder-container
     grid-template-columns: repeat(2, 1fr)
+  .stock-grid-holder-container
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(auto-fill, 1fr)
+  .see-all-dark-rectangle-container-full
+    display: none
 
 @media (min-width: 750px)
   .header-main
@@ -407,3 +412,8 @@ html
     display: flex
   .grid-holder-container
     grid-template-columns: repeat(3, 1fr)
+  .stock-grid-holder-container
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+  .see-all-dark-rectangle-container-full
+    display: flex
