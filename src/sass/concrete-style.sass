@@ -1,4 +1,4 @@
-@import style, fonts&colors, pageup
+@import style, fonts&colors, pageup, grid
 
 html body
   margin: 0
@@ -11,6 +11,12 @@ html
   display: flex
   width: 100%
   justify-content: center
+
+.percent-100-holder
+  display: flex
+  width: 100%
+  flex-direction: column
+  align-items: center
 
 .percent-95-centered-grid-holder
   display: flex
@@ -25,6 +31,10 @@ html
 .left-image-half-grid
   grid-column: 1 / 8
   grid-row: 1 / 13
+
+.inner-left-grid-image
+  width: 100%
+  height: auto
   border: 1px solid $border_color
 
 .basic-info-grid
@@ -72,6 +82,8 @@ html
     margin-top: 4%
   &__2
     margin-top: 2%
+  &__1
+    margin-top: 1%
 
 .options-concrete-grid
   display: grid
@@ -137,4 +149,21 @@ html
 .burger-sleeping
   border: 0
 
+.width-95
+  display: flex
+  width: 95%
+  flex-direction: row
+  justify-content: flex-start
+
+.gothic-left-recommendations
+  font-family: gothic-main
+  font-size: 5vw
+  color: $background_black
+
+.recommendations-grid-bottom
+  width: 95%
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-rows: 1fr
+  gap: 1em
 
