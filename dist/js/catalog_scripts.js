@@ -28,8 +28,8 @@ $(function() {
     }
     function spawn_grid_boxes(items_vector) { // Add boxes with items to the grid container
         for (object of items_vector) {
-            const template = `<div class='single-product-collected-container-max-width wow animate__animated animate__rubberBand item_id="${object.id}"'>
-                    <div class="grid-95-centered-holder-container__left">
+            const template = `<div class='single-product-collected-container-max-width wow animate__animated animate__rubberBand' item-id=${object.id}>
+                    <div class=" grid-95-centered-holder-container__left">
                         <span class="grid-name-title__span">${object.brand}</span>
                     </div>
                     <div class="lot-photo-holder-container">
@@ -100,15 +100,6 @@ $(function() {
         });
     });
 
-    $('.header-buttons-centered__a, .mobile-menu-section-container__button').on({
-        mouseenter: function() {
-            $(this).css("text-decoration", "underline");
-        },
-        mouseleave: function() {
-            $(this).css("text-decoration", "none");
-        }
-    });
-
     $(".unwrap-the-menu-container__button, .unwrap-the-menu-container__span").on('click', function() {
         const selector = $(".max-width-mobile-menu-container").css("display");
         if (selector === "flex") {
@@ -124,6 +115,6 @@ $(function() {
     });
 
     $(".grid-holder-container").on('click', '.single-product-collected-container-max-width .green-buy-button-container', function() {
-        console.log($(this).parent().attr(item_id));
+        console.log($(this).parent().attr('item-id'));
     });
 })
