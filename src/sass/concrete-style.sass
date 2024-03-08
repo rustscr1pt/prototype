@@ -6,3 +6,135 @@ html body
 
 html
   scroll-behavior: smooth
+
+.percent-100-grid-holder
+  display: flex
+  width: 100%
+  justify-content: center
+
+.percent-95-centered-grid-holder
+  display: flex
+  width: 95%
+
+.concrete-grid-12-12
+  display: grid
+  width: 100%
+  grid-template-rows: repeat(12, 1fr)
+  grid-template-columns: repeat(12, 1fr)
+
+.left-image-half-grid
+  grid-column: 1 / 8
+  grid-row: 1 / 13
+  border: 1px solid $border_color
+
+.basic-info-grid
+  display: flex
+  flex-direction: column
+  align-items: center
+  grid-column: 8 / 13
+  grid-row: 1 / 13
+  border-top: 1px solid $border_color
+
+.left-aligned-text
+  width: 95%
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+
+.bold-title
+  font-family: rf-bold
+  font-size: 3vw
+  color: black
+
+.regular-price
+  padding-left: 0.5%
+  font-family: rf-regular
+  font-size: 1.5vw
+  color: black
+
+.regular-description
+  display: flex
+  padding-left: 0.5%
+  font-family: rf-ultralight
+  font-size: 1.5vw
+  color: black
+
+.bold-burger-menu
+  font-family: rf-bold
+  font-size: 1.3vw
+  color: black
+
+.margin-top-custom
+  margin-top: 10%
+  &__8
+    margin-top: 8%
+  &__4
+    margin-top: 4%
+  &__2
+    margin-top: 2%
+
+.options-concrete-grid
+  display: grid
+  width: 95%
+  grid-template-columns: repeat(8, 1fr)
+  grid-template-rows: repeat(1, 1fr)
+  gap: 0.7em
+
+.option-button-active
+  display: flex
+  border: 1px solid $border_color
+  justify-content: center
+  cursor: pointer
+  &__span
+    font-family: rf-regular
+    font-size: 1.5vw
+
+.option-button-sleeping
+  display: flex
+  border: 1px solid $crystal_white
+  background-color: black
+  justify-content: center
+  cursor: pointer
+  &__span
+    font-family: rf-regular
+    font-size: 1.5vw
+    color: $crystal_white
+
+.centered-justified-wrapper
+  display: flex
+  width: 95%
+  justify-content: center
+
+.option-button-order
+  display: flex
+  border: 1px solid $crystal_white
+  width: 100%
+  background-color: black
+  justify-content: center
+  cursor: pointer
+  &__span
+    font-family: rf-regular
+    padding: 1.5% 0
+    font-size: 1.8vw
+    color: $crystal_white
+
+.underlined-wrapped-activator
+  display: flex
+  width: 95%
+  flex-direction: column
+  align-items: center
+
+.left-text-and-right-clicker
+  display: flex
+  width: 100%
+  flex-direction: row
+  justify-content: space-between
+
+.bottom-underlined-stamp
+  border: 1px solid $border_color
+  width: 100%
+
+.burger-sleeping
+  border: 0
+
+
