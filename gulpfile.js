@@ -3,7 +3,7 @@ const browserSync = require('browser-sync');
 const sass = require('gulp-sass')(require('sass')); // A plugin for working with CSS + correctly compile.
 const cleanCSS = require('gulp-clean-css'); // code compressor
 const htmlmin = require('gulp-htmlmin'); // import html minifier
-const imagemin = require('gulp-imagemin'); // import photo minifier STRICTLY USE : npm install gulp-imagemin@7.1.0 (IT ALLOWS REQUIRE IMPORT)
+const imagemin = require('gulp-imagemin'); // import photo minifier STRICTLY USE : npm install gulp-imagemin@7.1.0 (IT ALLOWS TO REQUIRE IMPORT)
 
 gulp.task('serve', function() {
     browserSync.init({
