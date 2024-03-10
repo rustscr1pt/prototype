@@ -64,27 +64,6 @@ function fill_bottom_grid(recommended_vector) {
         $('.recommendations-grid-bottom').append(grid_bottom_template);
     });
 }
-
-class AdditionalObject {
-    constructor(width, height, weight) {
-        this.width = width;
-        this.height = height;
-        this.weight = weight;
-    }
-    return_weight() {
-        return `Weight : ${this.weight}`
-    }
-    return_width() {
-        return `Width : ${this.width}`
-    }
-    return_height() {
-        return `Height : ${this.height}`
-    }
-    release_vec() {
-        return [`Height : [${this.height} mm]`, `Width : [${this.width} mm]`, `Weight : [${this.weight} grams]`]
-    }
-}
-
 class CartMainActor {
     constructor(id, name, brand, description, group_type, price, image_path, available_quantity, width_mm, height_mm, weight_piece_grams) {
         this.id = id
@@ -114,12 +93,23 @@ class CartMainActor {
             "weight_piece_grams" : this.weight_piece_grams
         }
     }
+    return_weight() {
+        return `Weight : ${this.weight_piece_grams}`
+    }
+    return_width() {
+        return `Width : ${this.width_mm}`
+    }
+    return_height() {
+        return `Height : ${this.height_mm}`
+    }
+    release_vec() {
+        return [`Height : [${this.height_mm} mm]`, `Width : [${this.width_mm} mm]`, `Weight : [${this.weight_piece_grams} grams]`]
+    }
 }
 
 $(function() {
     let querystring = location.search.substring(1).split("=")[1]; // Get an id of item before making a request
     console.log(querystring);
-    let additional_info_wrapper;
     let main_item_cart_actor;
 
     $.ajax({
@@ -133,9 +123,6 @@ $(function() {
             fill_main_actor(reply.item)
             fill_bottom_grid(reply.recommendations)
             const main_object = reply.item;
-            reply.recommendations.forEach(function(object) {
-                additional_info_wrapper = new AdditionalObject(object.width_mm, object.height_mm, object.weight_piece_grams);
-            }); // NO NEED TO ITERATE OVER ARRAY CAUSE DESCRIPTION FOR THE MAIN OBJECT
             main_item_cart_actor = new CartMainActor(main_object.id, main_object.name, main_object.brand,
                 main_object.description, main_object.group_type, main_object.price, main_object.image_path,
                 main_object.available_quantity, main_object.width_mm, main_object.height_mm,
@@ -151,13 +138,13 @@ $(function() {
             case "▼":
                 $(this).innerHTML = "▲";
                 $(this).parent().append(`<div class="left-aligned-text wow animate__animated animate__lightSpeedInRight">
-                                <span class="bold-burger-menu">${additional_info_wrapper.return_width()}</span>
+                                <span class="bold-burger-menu">${main_item_cart_actor.return_width()}</span>
                             </div>`)
                 $(this).parent().append(`<div class="left-aligned-text wow animate__animated animate__lightSpeedInRight">
-                                <span class="bold-burger-menu">${additional_info_wrapper.return_height()}</span>
+                                <span class="bold-burger-menu">${main_item_cart_actor.return_height()}</span>
                             </div>`)
                 $(this).parent().append(`<div class="left-aligned-text wow animate__animated animate__lightSpeedInRight">
-                                <span class="bold-burger-menu">${additional_info_wrapper.return_weight()}</span>
+                                <span class="bold-burger-menu">${main_item_cart_actor.return_weight()}</span>
                             </div>`)
             case "▲":
                 $(this).innerHTML = "▼";
@@ -171,7 +158,7 @@ $(function() {
         $(this).remove();
         const fold_template = `<button class="burger-active">▲</button>`;
         $(".left-text-and-right-clicker").append(fold_template);
-        additional_info_wrapper.release_vec().forEach(function(object, index) {
+        main_item_cart_actor.release_vec().forEach(function(object, index) {
             setTimeout(function() {
                 const wrapper = `<div class="left-aligned-text-additional wow animate__animated animate__fadeInRightBig">
                                 <span class="additional-span-styling">${object}</span>
@@ -194,20 +181,33 @@ $(function() {
                 })
             }, 350 * (step + 1));
         }
-    })
+    });
 
-    $('.concrete-grid-12-12').on('click', ".basic-info-grid .centered-justified-wrapper .option-button-order", function() {
-        console.log('clicked!');
+    function cart_checker(ready_template) {
+        let refreshed = JSON.parse(sessionStorage.getItem('cart'));
+        var i;
+        for (i = 0; i < refreshed.contents.length; i++) {
+            if (refreshed.contents[i] === ready_template) {
+                console.log('true');
+            }
+        }
+        console.log('false');
+    }
+
+    $(".concrete-grid-12-12").on('click', ".basic-info-grid .centered-justified-wrapper .option-button-order", function() {
         let template_cart_object = {
             "position" : {
                 "item" : main_item_cart_actor.release_self_json(),
-                "quantity" : 2,
+                "quantity" : 1,
                 "total_price" : 0,
-                "total_weight_grams" : 1350
+                "total_weight_grams" : 0
             }
         };
         template_cart_object.position.total_price = template_cart_object.position.quantity * template_cart_object.position.item.price;
         template_cart_object.position.total_weight_grams = template_cart_object.position.quantity * template_cart_object.position.item.weight_piece_grams;
-        console.log(template_cart_object);
+
+        sessionStorage.setItem('cart', JSON.stringify({"contents" : [template_cart_object]}));
+        console.log(JSON.parse(sessionStorage.getItem('cart')));
+        cart_checker(template_cart_object);
     })
 })
