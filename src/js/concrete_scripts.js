@@ -185,29 +185,30 @@ $(function() {
 
     function cart_checker(ready_template) {
         let refreshed = JSON.parse(sessionStorage.getItem('cart'));
+        console.log(refreshed);
+        console.log(ready_template);
         var i;
         for (i = 0; i < refreshed.contents.length; i++) {
-            if (refreshed.contents[i] === ready_template) {
+            if (JSON.stringify(refreshed.contents[i]) === JSON.stringify(ready_template)) {
                 console.log('true');
+                return true
             }
         }
         console.log('false');
+        return false
     }
 
     $(".concrete-grid-12-12").on('click', ".basic-info-grid .centered-justified-wrapper .option-button-order", function() {
         let template_cart_object = {
-            "position" : {
-                "item" : main_item_cart_actor.release_self_json(),
-                "quantity" : 1,
-                "total_price" : 0,
-                "total_weight_grams" : 0
-            }
+            "item" : main_item_cart_actor.release_self_json(),
+            "quantity" : 1,
+            "total_price" : 0,
+            "total_weight_grams" : 0
         };
-        template_cart_object.position.total_price = template_cart_object.position.quantity * template_cart_object.position.item.price;
-        template_cart_object.position.total_weight_grams = template_cart_object.position.quantity * template_cart_object.position.item.weight_piece_grams;
+        template_cart_object.total_price = template_cart_object.quantity * template_cart_object.item.price;
+        template_cart_object.total_weight_grams = template_cart_object.quantity * template_cart_object.item.weight_piece_grams;
 
         sessionStorage.setItem('cart', JSON.stringify({"contents" : [template_cart_object]}));
-        console.log(JSON.parse(sessionStorage.getItem('cart')));
         cart_checker(template_cart_object);
     })
 })
